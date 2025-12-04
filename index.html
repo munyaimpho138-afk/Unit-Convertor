@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-exchange-alt"></i>
+                <h1>Unit Converter Pro</h1>
+            </div>
+            <p class="tagline">Convert between different units instantly and accurately</p>
+        </header>
+
+        <!-- Main Converter -->
+        <div class="converter-container">
+            <!-- From Section -->
+            <div class="converter-card">
+                <div class="card-header">
+                    <i class="fas fa-arrow-right"></i>
+                    <h2>Convert From</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label for="fromValue">Value</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-hashtag input-icon"></i>
+                        <input type="number" id="fromValue" value="1" step="any" min="0">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Category</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-layer-group input-icon"></i>
+                        <select id="category">
+                            <option value="length">Length</option>
+                            <option value="weight">Weight</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="area">Area</option>
+                            <option value="volume">Volume</option>
+                            <option value="speed">Speed</option>
+                            <option value="time">Time</option>
+                            <option value="digital">Digital Storage</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="fromUnit">From Unit</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-ruler input-icon"></i>
+                        <select id="fromUnit"></select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- To Section -->
+            <div class="converter-card">
+                <div class="card-header">
+                    <i class="fas fa-arrow-left"></i>
+                    <h2>Convert To</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label>Result</label>
+                    <div class="result-display">
+                        <div class="result-value" id="resultValue">1.00</div>
+                        <div class="result-unit" id="resultUnit">meter</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="toUnit">To Unit</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-ruler-combined input-icon"></i>
+                        <select id="toUnit"></select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Formula</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-calculator input-icon"></i>
+                        <input type="text" id="formulaDisplay" readonly value="1 × 1 = 1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Swap Button -->
+        <div class="swap-button">
+            <button class="swap-btn" id="swapBtn">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+
+
+        <!-- Conversion History -->
+        <div class="history-container">
+            <div class="history-header">
+                <h2><i class="fas fa-history"></i> Conversion History</h2>
+                <button class="clear-history" id="clearHistory">
+                    <i class="fas fa-trash"></i> Clear History
+                </button>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="copyright">
+                &copy; 2023 Unit Converter Pro. All conversions are calculated in real-time.
+            </div>
+        </footer>
+    </div>
+
+    <script src="converter.js"></script>
+</body>
+</html>
